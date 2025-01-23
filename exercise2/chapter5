@@ -1,0 +1,198 @@
+#! /usr/bin/python3
+
+#5.1 conditional tests
+print("\n5.1 conditional tests:")
+shenanigans = True
+culprit = "watson"
+victim = "willow"
+sleeping_cat = "willow"
+zoomy_cat = "watson"
+print("Are there shananigans going on? I predict True.")
+print(shenanigans)
+
+print("Is the culprit Watson? I predict True.")
+print(culprit == "watson")
+
+print("Is the culprit Willow? I predict False.")
+print(culprit == "willow")
+
+print("Was the victim Watson? I predict False.")
+print(victim == "watson")
+
+print("Was the victim Willow? I predict True.")
+print(victim == "willow")
+
+print("Was Watson asleep? I predict False.")
+print(sleeping_cat == "watson")
+
+print("Was willow asleep? I predict True.")
+print(sleeping_cat == "willow")
+
+print("Did Watson have the zoomies? I predict True.")
+print(zoomy_cat == "watson")
+
+print("Did Willow have the zoomies? I predict False.")
+print(zoomy_cat == "willow")
+
+#5.2 more conditional tests
+print("\n5.2 more conditional tests:")
+composer = "beEthoven"
+#intentionally capitalized weird
+print("Is the composer mozart? I predict False.")
+print(composer.lower() == "mozart")
+
+print("Is the composer Beethoven? I predict True.")
+print(composer.lower() == "beethoven")
+
+number = 52
+if number > 9:
+    print("The number is two or more digits") #this will run
+if number > 99:
+    print("The number is 3 digits or more")
+if number < 42:
+    print("the number is less than the answer to life the universe and everything")
+else:
+    print("the number is greater than the answer to life the universe and everything") #this will run
+    
+print("Is the number 50? I predict False.")
+print(number == 50)
+
+print("I think that the number is not equal to 100")
+print(number != 100)
+
+print("Is the number >= 50 and <=55? I predict true")
+print(number >= 50 and number <= 55)
+
+#5.3 alien colors #1
+print("\n5.3 alien colors #1:")
+alien_color = "yellow"
+if alien_color == "green":
+    print("You earned 5 points!")
+    
+alien_color = "green"
+if alien_color == "green":
+    print("You earned 5 points!")
+    
+#5.4 alien colors #2
+print("\n5.4 alien colors #2:")
+alien_color = "yellow"
+if alien_color == "green":
+    print("You earned 5 points!")
+else:
+    print("You earned 10 points!")
+    
+alien_color = "green"
+if alien_color == "green":
+    print("You earned 5 points!")
+else:
+    print("You earned 10 points!")
+    
+#5.5 alien colors #3
+print("\n5.5 alien colors #3:")
+alien_color = ["yellow", "green", "red"]
+
+for alien in alien_color:
+    if alien == "green":
+        print("You earned 5 points!")
+    elif alien == "yellow":
+        print("You earned 10 points!")
+    else:
+        print("You earned 15 points!")
+        
+#5.6 stages of life
+print("\n5.6 stages of life:")
+age = 21
+if age < 2:
+    print("this person is a baby")
+elif age < 4:
+    print("this person is a toddler")
+elif age < 13:
+    print("this person is a kid")
+elif age < 20:
+    print("this person is teenager")
+elif age < 65:
+    print("this person is an adult")
+else:
+    print("this person is an elder")
+    
+#5.7 favorite fruit
+print("\n5.7 favorite fruit:")
+favorite_fruits = ["strawberry", "peach", "apple"]
+
+if "apple" in favorite_fruits:
+    print("You really like apples!")
+if "strawberry" in favorite_fruits:
+    print("You really like strawberries!")
+if "banana" in favorite_fruits:
+    print("You really like bananas!")
+if "kiwi" in favorite_fruits:
+    print("You really like kiwis!")
+if "peach" in favorite_fruits:
+    print("You really like peaches!")
+    
+    
+#5.8 hello admin
+print("\n5.8 hello admin:")
+        
+usernames = ["freza", "galand", "quokka", "admin", "francois"]
+for name in usernames:
+    if name == "admin":
+        print(f"Hello {name.title()}, would you like to see a status report?")
+    else:
+        print(f"Hello {name.title()}, thank for logging in again!")
+        
+#5.9 No users
+print("\n5.8 no users:")
+usernames = []
+if usernames:
+    for name in usernames:
+        if name == "admin":
+            print(f"Hello {name.title()}, would you like to see a status report?")
+        else:
+            print(f"Hello {name.title()}, thank for logging in again!")
+else:
+    print("We need more users!")
+
+#5.10 checking usernames
+current_users = ["freza", "Galand", "quokka", "admin", "francois"]
+new_users = ["luis", "FREZA", "felix", "chan", "galand"]
+
+comparable_current_users = []
+for user in current_users:
+    comparable_current_users.append(user.lower())
+
+for user in new_users:
+    if user.lower() in comparable_current_users:
+        print(f"The username '{user}' is not available. Please enter a different username.")
+    else:
+        print(f"The uername '{user}' is available!")
+
+
+#5.11 ordinal numbers
+print("\n5.11 ordinal numbers:")
+numbers = list(range(1,10))
+for number in numbers:
+    if number == 1:
+        ending = "st"
+    elif number == 2:
+        ending = "nd"
+    elif number == 3:
+        ending = "rd"
+    else:
+        ending = "th"
+    print(f"{number}{ending}")
+
+#5.12 styling if statements
+print("\n5.12 styling if statements:")
+print("To my understandind, all of the if statmenets so far are styled correctly.")
+
+#5.13 your ideas
+print("\n5.13 your ideas:")
+ideas = ["choose your own adventure game", "random food generator for when you can't make up your mind", "a program that picks a person to go first in a game"]
+grand_ideas = ["timecapsule app to send letters and photos to your future self", "mental health journaling app", "sprinting app, where you set goals for yourself an it has timers and little rewards", "spy mission game geared towards kids that gives them wholesome quests and games to play outside of screens"]
+print("Here are a couple simple program ideas that I have that I think would be doable at this stage:")
+for idea in ideas:
+    print(f"\t- {idea}")
+print("And here are some slightly more complex ideas I have:")
+for idea in grand_ideas:
+    print(f"\t- {idea}")
