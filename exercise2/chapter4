@@ -1,0 +1,98 @@
+#! /usr/bin/python3
+
+#4.1 pizzas
+print("\n4.1 Pizzas:")
+pizzas = ["cheese", "pepperoni", "meat lovers"]
+for pizza in pizzas:
+    print(f" I like {pizza} pizza")
+print("I really want to eat pizza!")
+
+#4.2 Animals
+print("\n4.2 Animals:")
+animals = ["tabby", "tuxedo", "calico"]
+for animal in animals:
+    print(f"a {animal} cat would make a great pet")
+print("Any cat would make a great pet!")
+    
+#4.3 Couting to 20
+print("\n4.3 Couting to 20:")
+for v in range(1, 21):
+    print(v)
+    
+#4.4 one million
+print("\n4.4 one million:")
+# for v in range(1, 1000001):
+#     print(v)
+
+#4.5 summing a million
+print("\n4.5 summing a million:")
+million = list(range(1, 1000001))
+print(f"min: {min(million)}")
+print(f"max: {max(million)}")   
+print(f"sum: {sum(million)}") 
+
+#4.6 odd numbers
+print("\n4.6 odd numbers:")
+odd_numbers = list(range(1, 101, 2))
+for num in odd_numbers:
+    print(num)
+
+#4.7 threes
+print("\n4.7 threes:")
+threes = list(range(3, 31, 3))
+for three in threes:
+    print(three)
+
+#4.8 cubes
+print("\n4.8 cubes:")
+cubes = []
+for v in range(1, 11):
+    cubes.append(v**3)
+for cube in cubes:
+    print(cube)
+    
+#4.9 cube comprehension
+print("\n4.9 cube comprehension:")
+cubes2 = [cube**3 for cube in range(1,11)]
+for cube in cubes2:
+    print(cube)
+
+#4.10 slices
+print("\n4.10 slices:")
+animals = ["tabby", "tuxedo", "calico", "maine coon", "siamese"]
+print(f"The first three items in the list are:")
+for x in animals[:3]:
+    print(f"\t{x}")
+print(f"Three items from the middle of the lists are:")
+for x in animals[1:4]:
+    print(f"\t{x}")
+print("The last three items in the list are")
+for x in animals[2:]:
+    print(f"\t{x}")
+    
+#4.11 pizzas
+print("\n4.11 pizzas:")
+friend_pizzas = pizzas[:]
+pizzas.append("veggie")
+friend_pizzas.append("triple cheese")
+print("My favorite pizzas are: ")
+for p in pizzas:
+    print(p)
+print("My friend's favorite pizzas are:")
+for p in friend_pizzas:
+    print(p)
+    
+#4.12 more loops
+print("\n4.12 more loops:")
+print("I already used for loops for the pizza examples, \nwhich I beilive is what they are referring to.")
+
+#4.12 buffet
+print("\n4.13 buffet:")
+foods = ("pizza", "salad", "sandwiches", "chicken", "tacos")
+for food in foods:
+    print(food)
+#the below line gets an error, as we can't edit a tuple
+#foods[2] = "burgers"
+foods = ("pizza", "fruit", "burgers", "chicken", "tacos")
+for food in foods:
+    print(food)
