@@ -86,7 +86,7 @@ for p in friend_pizzas:
 print("\n4.12 more loops:")
 print("I already used for loops for the pizza examples, \nwhich I beilive is what they are referring to.")
 
-#4.12 buffet
+#4.13 buffet
 print("\n4.13 buffet:")
 foods = ("pizza", "salad", "sandwiches", "chicken", "tacos")
 for food in foods:
