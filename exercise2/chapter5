@@ -142,7 +142,7 @@ for name in usernames:
         print(f"Hello {name.title()}, thank for logging in again!")
         
 #5.9 No users
-print("\n5.8 no users:")
+print("\n5.9 no users:")
 usernames = []
 if usernames:
     for name in usernames:
@@ -154,6 +154,7 @@ else:
     print("We need more users!")
 
 #5.10 checking usernames
+print("\n5.10 checking usernames")
 current_users = ["freza", "Galand", "quokka", "admin", "francois"]
 new_users = ["luis", "FREZA", "felix", "chan", "galand"]
 
