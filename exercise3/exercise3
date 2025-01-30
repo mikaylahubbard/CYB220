@@ -1,0 +1,206 @@
+#! /usr/bin/python3
+import random, time
+
+#Dictionaries
+#1
+me = {
+    "f_name": "mikayla",
+    "l_name": "hubbard",
+    "hometown": "indian land",
+    "current_city": "anderson",
+    "username": "mhubbard",
+}
+
+for k,v in me.items():
+    print(f"\nKey: {k}\nValue: {v}")
+
+#2
+print(f"This person's first name is {me['f_name'].title()}, last name is {me['l_name'].title()}, and their username is {me['username']}.")
+print(f"For security reasons, we might ask them for their hometown, which is {me['hometown'].title()}.")
+
+#3
+definitions = {
+    "python": " an object oriented programming language",
+    "variable": "holds a value",
+    "list": "an array of items",
+    "method": "function that belongs to a class",
+    "if statement": " a conditional statement",
+    "dictionary": "a collection of key:value pairs",
+    "function": "a block of code that performs an action",
+}
+
+for k,v in definitions.items():
+    print(f"{k.title()}:\n\t{v}")
+    
+#5
+countyDictionary = {
+    "anderson": "anderson",
+    "lancaster": "lancaster",
+    "kershaw": "camden",
+    "pickens": "pickens",
+    "oconee": "walhalla",
+    "greenville": "greenville",
+}
+#6
+countyList = ["anderson", "lancaster", "spartanburg", "darlington", "kershaw", "pickens", "chester","oconee", "greenville", "abbeville"]
+
+
+for county in countyList:
+    if county in countyDictionary.keys():
+        print(f"\n{county.title()} County is in our dictionary, and the capital/seat is {countyDictionary[county].title()}.")
+    else:
+        print(f"\n{county.title()} County is not in our dictionary. We will add this county shortly. Thanks!")
+
+#7     
+anderson = {
+    "anderson": 30148,
+    "berea": 16499,
+    "powdersville": 12458,
+    "homeland park": 7644,
+    "centerville": 7322,
+}
+lancaster = {
+    "fort mill": 36438,
+    "lancaster": 9296,
+    "springdale": 2581,
+    "kershaw": 1973,
+    "irwin": 1945,
+}
+pickens = {
+    "easley": 27503,
+    "clemson": 17866,
+    "central": 5340,
+    "pickens": 3388,
+    "liberty": 3289,
+}
+greenville = {
+    "greenville": 73394,
+    "greer": 47250,
+    "mauldin": 29088,
+    "simpsonville": 28236,
+    "taylors": 23236,
+}
+spartanburg = {
+    "spartanburg": 39184,
+    "boiling springs": 11686,
+    "valley falls": 7238,
+    "lyman": 6876,
+    "woodruff": 4683,
+}
+
+countiesList2 = [anderson, lancaster, pickens, greenville, spartanburg]
+
+for country in countiesList2:
+    for k, v in country.items():
+        print(f"\nIn {k.title()}, the current population is {v}")
+        
+#8
+sc_counties = {
+    "anderson": ["anderson", "berea", "powdersville"],
+    "lancaster": ["fort mill", "lancaster", "springdale"],
+    "pickens": ["easley", "clemson", "central"],
+    "greenville": ["greenville", "greer", "mauldin"],
+    "spartanburg": ["spartanburg", "boiling springs", "valley falls"],
+}
+for k, v in sc_counties.items():
+    print(f"In {k.title()} County, these are the top 3 cities:")
+    for city in v:
+        print(f"\t{city.title()}")
+        
+#user input
+
+#1
+name = input("Please enter a name: ")
+print(f"{name.title()}, welcome to Anderson University!")
+
+#2
+funds = int(input("How much money do you have to spend on a processor? (enter dollar amount): "))
+
+if funds >= 450:
+    processor = "i9"
+elif funds >= 200:
+    processor = "i7"
+elif funds >= 150:
+    processor = "i5"
+elif funds >= 77:
+    processor = "i3"
+else:
+    processor = "I'm sorry, the available processors are out of your budget"
+
+print(f"Based on this budget, this is the processor I would suggest for you: \n\t{processor}")
+
+        
+#3
+active = True
+while active:
+    num = input("\nEnter a number to check if it is even or odd. Enter 'q' to quit: ")
+    if num == 'q':
+        active = False
+    else:  
+        num = int(num)
+        if num % 2 == 0:
+            print(f"The number {num} is even")
+        else:
+            print(f"The number {num} is odd")
+            
+#4
+
+#accept the first 5 people as winners
+
+
+
+active = True
+
+new_player = input("Would you like to enter the race? \nIf so enter a name. If you don't wish to race enter 'n': ")
+if new_player == 'n':
+    active = False
+    
+while active:
+    players = [new_player, "kat", "luis", "natalie", "lincoln", "lexi", "hunter", "katie", "john", "lani"]
+    finishers = []    
+    winners = []
+    print("The race begins!")
+    while players:
+        finisher = random.choice(players)
+        players.remove(finisher)
+        finishers.append(finisher)
+        if len(winners) < 3:
+            winners.append(finisher)
+        time.sleep(1)
+        print(f"{finisher.title()} has finished!")
+    print(f"\nAnd the winners are: ")
+    place = 1;
+    for winner in winners:
+        print(f"\t{place}. {winner.title()}")
+        place += 1;
+    if new_player in winners:
+        print(f"\nCongratulations, {new_player.title()}!")
+    else:
+        print(f"\nBetter luck next time, {new_player.title()}")
+
+    new_player = input("Would you like to race again? \nIf so enter a name. If you don't wish to race enter 'n': ")
+    if new_player == 'n':
+        active = False
+        break
+
+
+#5
+responses = {}
+active = True
+while active:
+    name = input("Please enter your name: ")
+    flavor = input("What is your favorite Ubuntu flavor? ")
+    valid_flavors = ["edbuntu" ,"kubuntu", "lubuntu", "ubuntu budgie", "ubuntu cinnamon", "ubuntu kylin", "ubuntu mate", "ubuntu studio", "ubuntu unity"]
+    if flavor.lower() in valid_flavors:
+        responses[name] = flavor
+    else:
+        print(f"{flavor} is not a valid Ubuntu flavor. The valid flavors are:")
+        for flavor in valid_flavors:
+            print(flavor.title())
+        continue
+    repeat = input("Thank you for your response. Would you like to let someone else take the poll? (y/n): ")
+    if repeat == 'n':
+        active = False
+        
+for k,v in responses.items():
+    print(f"{k.title()}: {v.title()}")
