@@ -1,0 +1,9 @@
+[Unit]
+description = Run the timer.py script
+
+[Service]
+ExecStart = /home/parallels/Desktop/PythonAutomation/timer.py
+
+[Install]
+WantedBy = multi-user.target
+Alias = timerProgram.service
